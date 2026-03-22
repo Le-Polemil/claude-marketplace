@@ -1,6 +1,11 @@
 ---
 name: ateliers-ux
-description: Template du livrable des ateliers UX (personas, user stories, parcours)
+description: Template du livrable des ateliers UX
+required_sections:
+  - Personas
+  - User stories
+  - Parcours utilisateurs
+  - Priorisation des parcours à prototyper
 ---
 
 # Ateliers UX — {NOM_DU_PROJET}
@@ -9,40 +14,52 @@ description: Template du livrable des ateliers UX (personas, user stories, parco
 
 ## Personas
 
+> Chaque persona DOIT être distinct des autres sur minimum 3 critères (âge, besoin, device, budget, canal).
+
 ### Persona 1 — {NOM_PERSONA}
 
 | Attribut | Détail |
 |----------|--------|
 | Âge | {AGE} |
-| Métier | {METIER} |
+| Métier / situation | {METIER} |
 | Contexte | {CONTEXTE} |
 | Device principal | {DEVICE} |
+| Budget | {BUDGET} |
+| Canal d'acquisition | {CANAL} |
 
 **Besoins principaux :**
-{BESOINS}
+{BESOINS_DETAILLES}
 
 **Frustrations :**
-{FRUSTRATIONS}
+{FRUSTRATIONS_DETAILLEES}
 
-**Comment arrive sur le site :**
-{CANAL_ACQUISITION}
+**Citation type :**
+> "{CITATION_ILLUSTRATIVE}"
 
 ---
 
 ### Persona 2 — {NOM_PERSONA}
 
-_Même structure que ci-dessus._
+_Même structure. DOIT être clairement différent du Persona 1._
 
 ---
 
 ## User stories
 
+> Obligatoire — fait le lien entre personas et spécifications fonctionnelles.
+
 ### Épique : {NOM_EPIQUE}
 
 | ID | En tant que… | Je veux… | Afin de… | Priorité |
 |----|-------------|----------|----------|----------|
-| US-001 | {PERSONA} | {ACTION} | {BENEFICE} | Must/Should/Could |
-| US-002 | {PERSONA} | {ACTION} | {BENEFICE} | Must/Should/Could |
+| US-001 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 Must / 🟠 Should / 🟡 Could |
+| US-002 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 / 🟠 / 🟡 |
+
+### Épique : {NOM_EPIQUE_2}
+
+| ID | En tant que… | Je veux… | Afin de… | Priorité |
+|----|-------------|----------|----------|----------|
+| US-003 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 / 🟠 / 🟡 |
 
 ---
 
@@ -50,7 +67,7 @@ _Même structure que ci-dessus._
 
 ### Parcours 1 — {NOM_DU_PARCOURS}
 
-**Persona concerné :** {PERSONA}
+**Persona concerné :** {NOM_PERSONA}
 **Objectif :** {OBJECTIF}
 **Priorité de prototypage :** 🔴 Haute / 🟠 Moyenne / 🟡 Basse
 
@@ -59,12 +76,14 @@ _Même structure que ci-dessus._
 1. {ETAPE_1}
 2. {ETAPE_2}
 3. {ETAPE_3}
+4. {ETAPE_4}
 
 #### Edge cases
 
-| Cas | Comportement attendu |
-|-----|---------------------|
-| {EDGE_CASE_1} | {COMPORTEMENT} |
+| Cas | Déclencheur | Comportement attendu |
+|-----|------------|---------------------|
+| {EDGE_CASE_1} | {DECLENCHEUR_TECHNIQUE_OU_CONTEXTUEL} | {COMPORTEMENT_UX_CONCRET} |
+| {EDGE_CASE_2} | {DECLENCHEUR} | {COMPORTEMENT} |
 
 ---
 
@@ -72,5 +91,5 @@ _Même structure que ci-dessus._
 
 | Parcours | Persona | Priorité | Complexité | À prototyper |
 |----------|---------|----------|------------|-------------|
-| {PARCOURS_1} | {PERSONA} | Haute | {COMPLEXITE} | ✅ |
-| {PARCOURS_2} | {PERSONA} | Moyenne | {COMPLEXITE} | ✅/❌ |
+| {PARCOURS_1} | {PERSONA} | 🔴 Haute | S / M / L | ✅ |
+| {PARCOURS_2} | {PERSONA} | 🟠 Moyenne | S / M / L | ✅ / ❌ |

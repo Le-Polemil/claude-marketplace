@@ -1,6 +1,14 @@
 ---
 name: specs-fonctionnelles
 description: Template du livrable de spécifications fonctionnelles
+required_sections:
+  - Périmètre — In scope
+  - Périmètre — Out of scope
+  - Fonctionnalités détaillées
+  - Règles métier
+  - Contraintes techniques
+  - Contraintes réglementaires
+  - Matrice de priorisation
 ---
 
 # Spécifications fonctionnelles — {NOM_DU_PROJET}
@@ -13,57 +21,63 @@ description: Template du livrable de spécifications fonctionnelles
 
 ### In scope
 
-{LISTE_IN_SCOPE}
+{LISTE_DETAILLEE_DE_CE_QUI_EST_INCLUS}
 
 ### Out of scope
 
-{LISTE_OUT_SCOPE}
+{LISTE_DETAILLEE_DE_CE_QUI_EST_EXCLU — avec justification}
 
 ## Fonctionnalités
+
+> Chaque fonctionnalité référence le(s) persona(s) concerné(s) depuis ateliers-ux.md.
 
 ### {NOM_FONCTIONNALITE_1}
 
 | Attribut | Détail |
 |----------|--------|
 | Priorité | 🔴 Must / 🟠 Should / 🟡 Could / ⚪ Won't |
-| Complexité estimée | S / M / L / XL |
+| Complexité | S / M / L / XL |
+| Persona(s) concerné(s) | {NOM_PERSONA_1}, {NOM_PERSONA_2} |
+| User stories liées | US-{XXX}, US-{XXX} |
 | Dépendances | {DEPENDANCES} |
 
 **Description :**
 {DESCRIPTION_DETAILLEE}
 
 **Règles métier :**
-{REGLES_METIER}
+- {REGLE_1}
+- {REGLE_2}
 
 **Critères d'acceptation :**
 - [ ] {CRITERE_1}
 - [ ] {CRITERE_2}
-- [ ] {CRITERE_3}
+- [ ] {CRITERE_LIE_AU_KPI_DU_CADRAGE_SI_PERTINENT}
 
 ---
 
-### {NOM_FONCTIONNALITE_2}
+## Règles métier transversales
 
-_Même structure que ci-dessus._
-
----
+| Règle | Fonctionnalités impactées | Comportement attendu |
+|-------|--------------------------|---------------------|
+| {REGLE} | {FEATURES} | {COMPORTEMENT_DETAILLE} |
 
 ## Contraintes techniques
 
 | Contrainte | Détail | Impact |
 |-----------|--------|--------|
-| {CONTRAINTE_1} | {DETAIL} | {IMPACT} |
+| {CONTRAINTE} | {DETAIL} | {IMPACT_SUR_LE_PROJET} |
 
 ## Contraintes réglementaires
 
 | Réglementation | Exigence | Fonctionnalités impactées |
 |----------------|----------|--------------------------|
-| RGPD | {EXIGENCE} | {FONCTIONNALITES} |
-| Accessibilité | {EXIGENCE} | {FONCTIONNALITES} |
+| RGPD | {EXIGENCE_CONCRETE} | {FONCTIONNALITES} |
+| Accessibilité (RGAA/WCAG) | {EXIGENCE_CONCRETE} | {FONCTIONNALITES} |
+| {AUTRE} | {EXIGENCE} | {FONCTIONNALITES} |
 
 ## Matrice de priorisation
 
-| Fonctionnalité | Priorité | Complexité | Sprint estimé |
-|----------------|----------|------------|---------------|
-| {FEATURE_1} | Must | M | Sprint 1 |
-| {FEATURE_2} | Should | L | Sprint 2 |
+| Fonctionnalité | Priorité | Complexité | Persona(s) | Sprint estimé |
+|----------------|----------|------------|------------|---------------|
+| {FEATURE_1} | 🔴 Must | M | {PERSONA} | Sprint 1 |
+| {FEATURE_2} | 🟠 Should | L | {PERSONA} | Sprint 2 |

@@ -1,6 +1,14 @@
 ---
 name: cadrage
 description: Template du livrable de cadrage projet
+required_sections:
+  - Objectif du projet
+  - KPIs de succès
+  - Parties prenantes
+  - Budget
+  - Planning macro
+  - Contraintes
+  - Risques identifiés
 ---
 
 # Cadrage projet — {NOM_DU_PROJET}
@@ -10,46 +18,55 @@ description: Template du livrable de cadrage projet
 
 ## Objectif du projet
 
-{OBJECTIF_PRINCIPAL}
+{OBJECTIF_PRINCIPAL — 2-3 phrases décrivant le but concret du projet}
 
 ## KPIs de succès
 
-| KPI | Objectif | Méthode de mesure |
-|-----|----------|-------------------|
-| {KPI_1} | {OBJECTIF_1} | {MESURE_1} |
-| {KPI_2} | {OBJECTIF_2} | {MESURE_2} |
+| KPI | Objectif chiffré | Méthode de mesure |
+|-----|-----------------|-------------------|
+| {KPI_1} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
+| {KPI_2} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
+| {KPI_3} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
 
 ## Parties prenantes
 
 | Rôle | Nom | Responsabilité |
 |------|-----|----------------|
-| Décideur | {NOM} | Validation finale |
-| Validateur | {NOM} | Review des livrables |
-| Référent technique | {NOM} | Choix techniques |
-| Référent contenu | {NOM} | Validation éditoriale |
+| Décideur | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
+| Validateur | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
+| Référent technique | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
+| Référent contenu | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
 
 ## Budget
 
-- **Enveloppe** : {BUDGET}
-- **Répartition estimée** : {REPARTITION_SI_CONNUE}
+- **Enveloppe totale** : {MONTANT}
+- **Répartition** :
+  - Conception / UX : {MONTANT_OU_POURCENTAGE}
+  - Design : {MONTANT_OU_POURCENTAGE}
+  - Développement : {MONTANT_OU_POURCENTAGE}
+  - Hébergement / infra : {MONTANT_OU_POURCENTAGE}
+  - Marge / imprévus : {MONTANT_OU_POURCENTAGE}
 
 ## Planning macro
 
 | Jalon | Date prévue | Dépendances |
 |-------|-------------|-------------|
-| Kick-off | {DATE} | — |
-| Fin Discovery | {DATE} | — |
-| Maquettes validées | {DATE} | Discovery |
-| Début développement | {DATE} | Maquettes |
-| Recette client | {DATE} | Développement |
-| Mise en production | {DATE} | Recette |
+| Kick-off | {JJ/MM/AAAA} | — |
+| Fin Discovery | {JJ/MM/AAAA} | — |
+| Maquettes validées | {JJ/MM/AAAA} | Discovery |
+| Début développement | {JJ/MM/AAAA} | Maquettes |
+| Recette client | {JJ/MM/AAAA} | Développement |
+| Mise en production | {JJ/MM/AAAA} | Recette |
 
 ## Contraintes
 
-{LISTE_DES_CONTRAINTES}
+| Contrainte | Type | Impact sur le projet |
+|-----------|------|---------------------|
+| {CONTRAINTE_1} | Deadline / Techno / Légal / Budget | {IMPACT} |
 
 ## Risques identifiés
 
-| Risque | Impact | Probabilité | Mitigation |
-|--------|--------|-------------|------------|
-| {RISQUE_1} | {IMPACT} | {PROBA} | {MITIGATION} |
+| Risque | Impact | Probabilité | Stratégie de mitigation |
+|--------|--------|-------------|------------------------|
+| {RISQUE_1} | 🔴 Fort / 🟠 Moyen / 🟡 Faible | 🔴 / 🟠 / 🟡 | {ACTION_CONCRETE} |
+| {RISQUE_2} | 🔴 / 🟠 / 🟡 | 🔴 / 🟠 / 🟡 | {ACTION_CONCRETE} |

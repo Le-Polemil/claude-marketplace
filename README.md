@@ -4,7 +4,7 @@
 
 ## Concept
 
-Chaque plugin correspond à une phase du cycle de vie d'un projet web. Les plugins sont **hybrides** : ils posent les questions clés, puis génèrent les livrables correspondants.
+Chaque plugin correspond à une phase du cycle de vie d'un projet web. Les plugins sont **hybrides** : ils posent les questions clés, puis génèrent les livrables correspondants avec validation stricte.
 
 Toutes les données du projet sont centralisées dans un dossier `work/` avec un fichier `projet.md` qui sert de fil rouge entre les phases.
 
@@ -29,36 +29,37 @@ Toutes les données du projet sont centralisées dans un dossier `work/` avec un
 # Ajouter la marketplace
 claude plugin marketplace add Le-Polemil/claude-marketplace
 
-# Installer tous les plugins
+# Installer les plugins via le menu interactif
 /plugin
 # → Discover → sélectionner les plugins voulus
 
 # Ou en CLI
 claude plugin install project-init@web-project-toolkit
 claude plugin install 01-discovery@web-project-toolkit
-# ... etc
 ```
 
 ## Workflow
 
 ```bash
 /project-init       # Initialiser le projet
-/discovery          # Phase 01 — Discovery
-/architecture       # Phase 02 — Architecture
-/setup              # Phase 03 — Setup
-/design             # Phase 04 — Design
-/ticketing          # Phase 05 — Ticketing
-/development        # Phase 06 — Développement
-/qa                 # Phase 07 — QA / Tests
-/deployment         # Phase 08 — Déploiement
-/post-launch        # Phase 09 — Post-lancement
+/discovery          # Phase 01
+/architecture       # Phase 02
+/setup              # Phase 03
+/design             # Phase 04
+/ticketing          # Phase 05
+/development        # Phase 06
+/qa                 # Phase 07
+/deployment         # Phase 08
+/post-launch        # Phase 09
 ```
 
-Chaque plugin :
-1. Lit `work/projet.md` pour le contexte
-2. Pose les questions clés
-3. Génère les livrables dans `work/[phase]/`
-4. Met à jour `work/projet.md`
+## Qualité des livrables
+
+Chaque plugin applique des règles strictes :
+- **Conformité template** : toutes les sections obligatoires sont vérifiées
+- **Zéro placeholder** : pas de "À définir" ni "TBD" — l'info manquante est redemandée
+- **Validation post-génération** : checklist automatique après chaque livrable
+- **Cross-référencement** : les personas, KPIs et parcours sont tracés entre les livrables
 
 ## Licence
 
