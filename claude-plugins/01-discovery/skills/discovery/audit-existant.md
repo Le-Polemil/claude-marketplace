@@ -1,108 +1,86 @@
 ---
 name: audit-existant
-description: Template du livrable d'audit de l'existant (refonte)
+description: Existing site audit (refonte only) — tech health, analytics, UX, content inventory, recommendations
+condition: projet.refonte == true
 required_sections:
-  - Crawl technique — Santé du site
-  - Crawl technique — Performance Lighthouse
-  - Analyse analytics — Pages les plus visitées
-  - Analyse analytics — Parcours principaux
-  - Analyse analytics — Points de friction
-  - Audit UX heuristique — Forces
-  - Audit UX heuristique — Faiblesses
-  - Inventaire des contenus — À conserver
-  - Inventaire des contenus — À réécrire
-  - Inventaire des contenus — À supprimer
-  - Dette technique
-  - Recommandations
+  - tech_health
+  - lighthouse
+  - analytics
+  - ux_audit
+  - content_inventory
+  - tech_debt
+  - recommendations
+light_sections:
+  - tech_health
+  - ux_audit
+  - content_inventory
+  - recommendations
+output_file: work/01-discovery/audit-existant.md
 ---
 
-# Audit de l'existant — {NOM_DU_PROJET}
+# Audit existant — {project_name}
 
-> URL analysée : {URL_COMPLETE}
-> Date de l'audit : {DATE}
+url: {site_url}
+date: {YYYY-MM-DD}
 
-## Crawl technique
+## tech_health
 
-### Santé du site
+| metric | value | status |
+|--------|-------|--------|
+| indexed_pages | {n} | ok / warning / critical |
+| 404_errors | {n} | ok / warning / critical |
+| 301_redirects | {n} | ok / warning / critical |
+| missing_title_or_meta | {n} | ok / warning / critical |
+| avg_load_time_seconds | {n} | ok / warning / critical |
 
-| Métrique | Valeur | Évaluation |
-|----------|--------|------------|
-| Nombre de pages indexées | {N} | 🟢 OK / 🟠 Warning / 🔴 KO |
-| Erreurs 404 | {N} | 🟢 / 🟠 / 🔴 |
-| Redirections 301 | {N} | 🟢 / 🟠 / 🔴 |
-| Pages sans balise title | {N} | 🟢 / 🟠 / 🔴 |
-| Pages sans meta description | {N} | 🟢 / 🟠 / 🔴 |
-| Temps de chargement moyen | {N}s | 🟢 / 🟠 / 🔴 |
+## lighthouse
 
-### Performance (Lighthouse)
+| metric | score | target |
+|--------|-------|--------|
+| performance | {n}/100 | >90 |
+| accessibility | {n}/100 | >90 |
+| best_practices | {n}/100 | >90 |
+| seo | {n}/100 | >90 |
 
-| Métrique | Score | Objectif | Écart |
-|----------|-------|----------|-------|
-| Performance | {SCORE}/100 | > 90 | {ECART} |
-| Accessibility | {SCORE}/100 | > 90 | {ECART} |
-| Best Practices | {SCORE}/100 | > 90 | {ECART} |
-| SEO | {SCORE}/100 | > 90 | {ECART} |
+## analytics
 
-## Analyse analytics
+top_pages:
 
-### Pages les plus visitées
+| page | monthly_visits | bounce_rate |
+|------|---------------|-------------|
+| {page} | {n} | {n}% |
 
-| # | Page | Visites/mois | Taux de rebond | Temps moyen |
-|---|------|-------------|----------------|-------------|
-| 1 | {PAGE} | {N} | {N}% | {N}s |
+friction_points:
 
-### Parcours principaux
+| issue | pages | impact |
+|-------|-------|--------|
+| {issue} | {pages} | high / medium / low |
 
-{DESCRIPTION_DETAILLEE_DES_PARCOURS_OBSERVES}
+## ux_audit
 
-### Points de friction identifiés
+strengths:
+- {strength}
 
-| Point de friction | Page(s) concernée(s) | Impact estimé |
-|-------------------|---------------------|---------------|
-| {FRICTION_1} | {PAGES} | 🔴 Fort / 🟠 Moyen / 🟡 Faible |
+weaknesses:
 
-## Audit UX heuristique
+| issue | severity | recommendation |
+|-------|----------|---------------|
+| {issue} | critical / major / minor | {recommendation} |
 
-### Forces
+## content_inventory
 
-| Force | Détail |
-|-------|--------|
-| {FORCE_1} | {EXPLICATION} |
+| content | action | reason |
+|---------|--------|--------|
+| {content} | keep / rewrite / delete | {reason} |
 
-### Faiblesses / irritants
+## tech_debt
 
-| Irritant | Sévérité | Impact utilisateur | Recommandation |
-|----------|----------|-------------------|----------------|
-| {IRRITANT_1} | 🔴 Critique / 🟠 Majeur / 🟡 Mineur | {IMPACT} | {RECOMMANDATION} |
+| item | type | severity | impact |
+|------|------|----------|--------|
+| {item} | obsolete_tech / perf / security / maintainability | high / medium / low | {impact} |
 
-## Inventaire des contenus
+## recommendations
 
-### À conserver
-
-| Contenu | Raison | Action requise |
-|---------|--------|---------------|
-| {CONTENU} | {RAISON} | Migrer tel quel / Adapter |
-
-### À réécrire
-
-| Contenu | Raison | Priorité |
-|---------|--------|----------|
-| {CONTENU} | {RAISON} | 🔴 / 🟠 / 🟡 |
-
-### À supprimer
-
-| Contenu | Raison |
-|---------|--------|
-| {CONTENU} | {RAISON} |
-
-## Dette technique
-
-| Élément | Type de dette | Sévérité | Impact sur le projet |
-|---------|-------------|----------|---------------------|
-| {ELEMENT} | Techno obsolète / Perf / Sécu / Maintenabilité | 🔴 / 🟠 / 🟡 | {IMPACT} |
-
-## Recommandations
-
-| # | Recommandation | Priorité | Effort estimé |
-|---|---------------|----------|---------------|
-| 1 | {RECO} | 🔴 Haute / 🟠 Moyenne / 🟡 Basse | S / M / L |
+| priority | recommendation | effort |
+|----------|---------------|--------|
+| high / medium / low | {recommendation} | S / M / L |

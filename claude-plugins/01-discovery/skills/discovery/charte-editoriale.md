@@ -1,103 +1,81 @@
 ---
 name: charte-editoriale
-description: Template du livrable de charte éditoriale
+description: Editorial guidelines — tone positioning, writing rules, glossary, content examples
 required_sections:
-  - Positionnement éditorial
-  - Règles rédactionnelles — Structure
-  - Règles rédactionnelles — Typographie
-  - Règles rédactionnelles — Ton
-  - Glossaire métier
-  - Exemples par type de contenu — Page produit
-  - Exemples par type de contenu — CTA et boutons
-  - Exemples par type de contenu — Message d'erreur
-  - Exemples par type de contenu — Email transactionnel
-  - Références de ton
+  - tone_positioning
+  - writing_rules
+  - glossary
+  - content_examples
+  - tone_references
+light_sections:
+  - tone_positioning
+  - writing_rules
+  - glossary
+output_file: work/01-discovery/charte-editoriale.md
 ---
 
-# Charte éditoriale — {NOM_DU_PROJET}
+# Charte éditoriale — {project_name}
 
-> Date : {DATE}
+date: {YYYY-MM-DD}
 
-## Positionnement éditorial
+## tone_positioning
 
-| Axe | Curseur (1-5) | Justification |
-|-----|---------------|---------------|
-| Formel (1) ↔ Décontracté (5) | {N}/5 | {JUSTIFICATION} |
-| Expert (1) ↔ Accessible (5) | {N}/5 | {JUSTIFICATION} |
-| Institutionnel (1) ↔ Humain (5) | {N}/5 | {JUSTIFICATION} |
+| axis | value (1-5) | justification |
+|------|-------------|--------------|
+| formal (1) ↔ casual (5) | {n}/5 | {why} |
+| expert (1) ↔ accessible (5) | {n}/5 | {why} |
+| institutional (1) ↔ human (5) | {n}/5 | {why} |
 
-**Tutoiement / Vouvoiement / Adresse neutre :** {CHOIX} — {JUSTIFICATION}
+address_mode: tu / vous / neutral — {justification}
 
-## Règles rédactionnelles
+## writing_rules
 
-### Structure
+| rule | value |
+|------|-------|
+| title_length | {rule} |
+| paragraph_length | {rule} |
+| active_voice | yes / no |
+| title_capitalization | {rule} |
+| quotation_marks | « » / " " |
 
-| Règle | Valeur |
-|-------|--------|
-| Longueur des titres | {REGLE_CONCRETE} |
-| Longueur des paragraphes | {REGLE_CONCRETE} |
-| Voix active privilégiée | Oui / Non |
-| Phrases courtes (< 20 mots) | Oui / Non |
-| Structure type d'une page | {DESCRIPTION} |
+do:
+- {good_example}
 
-### Typographie
+dont:
+- {bad_example}
 
-| Règle | Valeur |
-|-------|--------|
-| Majuscules dans les titres | {REGLE} |
-| Ponctuation des listes | {REGLE} |
-| Guillemets | {REGLE — français « » ou anglais " "} |
-| Espaces insécables | {REGLE} |
+## glossary
 
-### Ton
+| preferred_term | avoid | context |
+|---------------|-------|---------|
+| {term} | {avoid} | {when_to_use} |
 
-{DESCRIPTION_DETAILLEE_DU_TON}
+## content_examples
 
-**Do :**
-- {EXEMPLE_DO_1}
-- {EXEMPLE_DO_2}
+All examples must be fully written out, not placeholders.
 
-**Don't :**
-- {EXEMPLE_DONT_1}
-- {EXEMPLE_DONT_2}
+cta_buttons:
 
-## Glossaire métier
+| action | recommended | avoid |
+|--------|-----------|-------|
+| {action} | {good_text} | {bad_text} |
 
-| Terme à utiliser | Terme à éviter | Contexte d'usage |
-|-----------------|----------------|------------------|
-| {TERME_OK} | {TERME_KO} | {QUAND_UTILISER} |
+error_messages:
 
-## Exemples de rédaction par type de contenu
-
-### Page produit
-
-> {EXEMPLE_COMPLET_REDIGE}
-
-### Article de blog
-
-> {EXEMPLE_COMPLET_REDIGE}
-
-### CTA / boutons
-
-| Action | Texte recommandé | Texte à éviter |
-|--------|-----------------|----------------|
-| {ACTION} | {BON_TEXTE} | {MAUVAIS_TEXTE} |
-
-### Message d'erreur
-
-| Situation | Message |
+| situation | message |
 |-----------|---------|
-| Champ requis vide | {MESSAGE} |
-| Email invalide | {MESSAGE} |
-| Paiement échoué | {MESSAGE} |
-| Page introuvable | {MESSAGE} |
+| required_field_empty | {message} |
+| invalid_email | {message} |
+| payment_failed | {message} |
 
-### Email transactionnel
+product_page_example: |
+  {full_written_example}
 
-> {EXEMPLE_COMPLET_REDIGE}
+transactional_email_example: |
+  {full_written_example}
 
-## Références de ton
+## tone_references
 
-| Source | URL | Ce qui nous inspire |
-|--------|-----|-------------------|
-| {REFERENCE} | {URL} | {CE_QUI_INSPIRE_CONCRETEMENT} |
+| source | url | what_inspires |
+|--------|-----|--------------|
+| {source} | {url} | {detail} |

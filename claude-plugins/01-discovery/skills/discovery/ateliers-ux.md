@@ -1,95 +1,72 @@
 ---
 name: ateliers-ux
-description: Template du livrable des ateliers UX
+description: UX workshops — personas, user stories, user journeys, prototyping priorities
 required_sections:
-  - Personas
-  - User stories
-  - Parcours utilisateurs
-  - Priorisation des parcours à prototyper
+  - personas
+  - user_stories
+  - user_journeys
+  - journey_prioritization
+light_sections:
+  - personas
+  - user_stories
+  - user_journeys
+output_file: work/01-discovery/ateliers-ux.md
 ---
 
-# Ateliers UX — {NOM_DU_PROJET}
+# Ateliers UX — {project_name}
 
-> Date : {DATE}
+date: {YYYY-MM-DD}
 
-## Personas
+## personas
 
-> Chaque persona DOIT être distinct des autres sur minimum 3 critères (âge, besoin, device, budget, canal).
+Constraint: each persona must differ from others on at least 3 attributes.
 
-### Persona 1 — {NOM_PERSONA}
+### {persona_name}
 
-| Attribut | Détail |
-|----------|--------|
-| Âge | {AGE} |
-| Métier / situation | {METIER} |
-| Contexte | {CONTEXTE} |
-| Device principal | {DEVICE} |
-| Budget | {BUDGET} |
-| Canal d'acquisition | {CANAL} |
-
-**Besoins principaux :**
-{BESOINS_DETAILLES}
-
-**Frustrations :**
-{FRUSTRATIONS_DETAILLEES}
-
-**Citation type :**
-> "{CITATION_ILLUSTRATIVE}"
+- profile: {age, job, situation}
+- device: {primary_device}
+- acquisition_channel: {channel}
+- needs: {needs}
+- frustrations: {frustrations}
 
 ---
 
-### Persona 2 — {NOM_PERSONA}
+### {persona_name_2}
 
-_Même structure. DOIT être clairement différent du Persona 1._
-
----
-
-## User stories
-
-> Obligatoire — fait le lien entre personas et spécifications fonctionnelles.
-
-### Épique : {NOM_EPIQUE}
-
-| ID | En tant que… | Je veux… | Afin de… | Priorité |
-|----|-------------|----------|----------|----------|
-| US-001 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 Must / 🟠 Should / 🟡 Could |
-| US-002 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 / 🟠 / 🟡 |
-
-### Épique : {NOM_EPIQUE_2}
-
-| ID | En tant que… | Je veux… | Afin de… | Priorité |
-|----|-------------|----------|----------|----------|
-| US-003 | {NOM_PERSONA} | {ACTION_CONCRETE} | {BENEFICE_MESURABLE} | 🔴 / 🟠 / 🟡 |
+Same structure. Must be clearly distinct from persona 1.
 
 ---
 
-## Parcours utilisateurs
+## user_stories
 
-### Parcours 1 — {NOM_DU_PARCOURS}
+Format: As {persona_name}, I want {action} so that {benefit}.
 
-**Persona concerné :** {NOM_PERSONA}
-**Objectif :** {OBJECTIF}
-**Priorité de prototypage :** 🔴 Haute / 🟠 Moyenne / 🟡 Basse
+| id | persona | action | benefit | priority |
+|----|---------|--------|---------|----------|
+| US-001 | {persona_name} | {action} | {benefit} | must / should / could |
 
-#### Happy path
+## user_journeys
 
-1. {ETAPE_1}
-2. {ETAPE_2}
-3. {ETAPE_3}
-4. {ETAPE_4}
+### {journey_name}
 
-#### Edge cases
+- persona: {persona_name}
+- goal: {goal}
 
-| Cas | Déclencheur | Comportement attendu |
-|-----|------------|---------------------|
-| {EDGE_CASE_1} | {DECLENCHEUR_TECHNIQUE_OU_CONTEXTUEL} | {COMPORTEMENT_UX_CONCRET} |
-| {EDGE_CASE_2} | {DECLENCHEUR} | {COMPORTEMENT} |
+happy_path:
+1. {step}
+2. {step}
+3. {step}
+
+edge_cases:
+
+| case | trigger | expected_behavior |
+|------|---------|------------------|
+| {case} | {trigger} | {behavior} |
 
 ---
 
-## Priorisation des parcours à prototyper
+## journey_prioritization
 
-| Parcours | Persona | Priorité | Complexité | À prototyper |
-|----------|---------|----------|------------|-------------|
-| {PARCOURS_1} | {PERSONA} | 🔴 Haute | S / M / L | ✅ |
-| {PARCOURS_2} | {PERSONA} | 🟠 Moyenne | S / M / L | ✅ / ❌ |
+| journey | persona | priority | complexity | prototype |
+|---------|---------|----------|-----------|-----------|
+| {journey} | {persona} | high / medium / low | S / M / L | yes / no |

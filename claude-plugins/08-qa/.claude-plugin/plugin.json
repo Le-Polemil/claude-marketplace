@@ -1,0 +1,5 @@
+{
+  "name": "08-qa",
+  "version": "1.0.0",
+  "description": "Phase QA : tests unitaires, E2E, cross-browser, a11y, sécurité, performance"
+}

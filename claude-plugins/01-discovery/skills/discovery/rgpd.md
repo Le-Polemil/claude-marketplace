@@ -1,99 +1,100 @@
 ---
 name: rgpd
-description: Template du livrable de conformité RGPD
+description: GDPR compliance — data processing inventory, consent, forms audit, user rights, legal notices, privacy policy
+cross_references:
+  - specs-fonctionnelles.features → forms and data collection points
 required_sections:
-  - Inventaire des traitements de données
-  - Solution de consentement cookies
-  - Audit des formulaires
-  - Droits des utilisateurs
-  - Mentions légales (template)
-  - Politique de confidentialité (structure)
-  - Hébergement et transferts
-  - Actions à mener
+  - data_processing_inventory
+  - cookie_consent
+  - forms_audit
+  - user_rights
+  - legal_notices
+  - privacy_policy_structure
+  - hosting_and_transfers
+  - action_items
+light_sections:
+  - data_processing_inventory
+  - cookie_consent
+  - legal_notices
+  - action_items
+output_file: work/01-discovery/rgpd.md
 ---
 
-# Conformité RGPD — {NOM_DU_PROJET}
+# RGPD — {project_name}
 
-> Date : {DATE}
-> DPO : {NOM_COMPLET} — {EMAIL_OU_CONTACT}
+date: {YYYY-MM-DD}
+dpo: {name} — {contact}
 
-## Inventaire des traitements de données
+## data_processing_inventory
 
-| Traitement | Données collectées | Base légale | Durée de conservation | Destinataires |
-|------------|-------------------|-------------|----------------------|---------------|
-| {TRAITEMENT} | {DONNEES_PRECISES} | Consentement / Contrat / Intérêt légitime / Obligation légale | {DUREE_PRECISE} | {DESTINATAIRES} |
+| processing | data_collected | legal_basis | retention_period |
+|-----------|---------------|-------------|-----------------|
+| {processing} | {data} | consent / contract / legitimate_interest / legal_obligation | {duration} |
 
-## Solution de consentement cookies
+## cookie_consent
 
-- **Outil choisi** : {NOM_OUTIL} — {JUSTIFICATION_DU_CHOIX}
-- **Catégories de cookies** :
-  - Strictement nécessaires (pas de consentement requis) : {LISTE}
-  - Analytics / mesure d'audience : {LISTE}
-  - Marketing / publicité : {LISTE_OU_NA}
-  - Réseaux sociaux : {LISTE_OU_NA}
+- tool: {tool_name} — {justification}
+- categories:
+  - strictly_necessary: {list}
+  - analytics: {list}
+  - marketing: {list_or_none}
 
-## Audit des formulaires
+## forms_audit
 
-> Doit correspondre aux formulaires décrits dans specs-fonctionnelles.md.
+Cross-ref with specs-fonctionnelles features.
 
-| Formulaire | Champs | Champs obligatoires | Consentement explicite | Lien politique confidentialité |
-|-----------|--------|--------------------|-----------------------|-------------------------------|
-| {FORMULAIRE} | {LISTE_CHAMPS} | {LISTE_OBLIGATOIRES} | ✅ / ❌ | ✅ / ❌ |
+| form | required_fields | explicit_consent | privacy_policy_link |
+|------|----------------|-----------------|-------------------|
+| {form} | {fields} | yes / no | yes / no |
 
-## Droits des utilisateurs
+## user_rights
 
-| Droit | Implémentation prévue |
-|-------|----------------------|
-| Accès | {COMMENT_CONCRETEMENT} |
-| Rectification | {COMMENT} |
-| Suppression | {COMMENT} |
-| Portabilité | {COMMENT} |
-| Opposition | {COMMENT} |
+| right | implementation |
+|-------|---------------|
+| access | {how} |
+| rectification | {how} |
+| deletion | {how} |
+| portability | {how} |
+| objection | {how} |
 
-## Mentions légales (template)
+## legal_notices
 
 ```
-Éditeur du site : {RAISON_SOCIALE}
-Adresse : {ADRESSE_COMPLETE}
-SIRET : {NUMERO_SIRET}
-Directeur de la publication : {NOM_COMPLET}
-Contact : {EMAIL}
-
-Hébergeur : {NOM_HEBERGEUR}
-Adresse : {ADRESSE_HEBERGEUR}
-Téléphone : {TEL_HEBERGEUR}
+publisher: {company_name}
+address: {address}
+siret: {siret}
+publication_director: {name}
+contact: {email}
+host: {host_name} — {host_address}
 ```
 
-## Politique de confidentialité (structure)
+## privacy_policy_structure
 
-> Les 10 points obligatoires à couvrir dans la politique de confidentialité :
+Required 10 points:
+1. data_controller_identity
+2. data_collected_and_purposes
+3. legal_basis
+4. retention_periods
+5. data_recipients
+6. non_eu_transfers
+7. user_rights
+8. cookies_and_trackers
+9. dpo_contact
+10. complaint_right (CNIL — https://www.cnil.fr)
 
-1. **Identité du responsable de traitement** : {QUI}
-2. **Données collectées et finalités** : {RESUME}
-3. **Base légale des traitements** : {RESUME}
-4. **Durées de conservation** : {RESUME}
-5. **Destinataires des données** : {RESUME}
-6. **Transferts hors UE** : {OUI_DETAILS / NON}
-7. **Droits des personnes** : {COMMENT_EXERCER}
-8. **Cookies et traceurs** : {RENVOI_VERS_SOLUTION_CONSENTEMENT}
-9. **Contact DPO** : {EMAIL_DPO}
-10. **Droit de réclamation** : auprès de la CNIL — https://www.cnil.fr
+## hosting_and_transfers
 
-## Hébergement et transferts
+- eu_hosting: yes / no — {host}, {country}
+- non_eu_subprocessors:
 
-- **Hébergement UE** : {OUI/NON} — {NOM_HEBERGEUR}, {PAYS}
-- **Sous-traitants hors UE** :
+| subprocessor | country | service | safeguards |
+|-------------|---------|---------|-----------|
+| {name} | {country} | {service} | standard_contractual_clauses / adequacy_decision |
 
-| Sous-traitant | Pays | Service | Garanties |
-|---------------|------|---------|-----------|
-| {NOM} | {PAYS} | {SERVICE} | Clauses contractuelles types / Décision d'adéquation / Autre |
+## action_items
 
-## Actions à mener
-
-- [ ] Rédiger les mentions légales définitives
-- [ ] Rédiger la politique de confidentialité complète
-- [ ] Configurer {OUTIL_CONSENTEMENT}
-- [ ] Ajouter les liens de politique de confidentialité sur tous les formulaires
-- [ ] Implémenter les mécanismes de droits utilisateurs
-- [ ] Vérifier la conformité de {OUTIL_ANALYTICS}
-- [ ] Documenter les clauses contractuelles avec les sous-traitants hors UE
+- [ ] Write final legal notices
+- [ ] Write full privacy policy
+- [ ] Configure {consent_tool}
+- [ ] Add privacy policy links to all forms
+- [ ] Implement user rights mechanisms

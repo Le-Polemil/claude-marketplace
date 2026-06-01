@@ -1,83 +1,77 @@
 ---
 name: specs-fonctionnelles
-description: Template du livrable de spécifications fonctionnelles
+description: Functional specs — scope, features with persona/KPI refs, business rules, constraints, prioritization matrix
+cross_references:
+  - cadrage.kpis → feature acceptance criteria
+  - ateliers-ux.personas → feature persona mapping
+  - ateliers-ux.user_stories → feature user story links
 required_sections:
-  - Périmètre — In scope
-  - Périmètre — Out of scope
-  - Fonctionnalités détaillées
-  - Règles métier
-  - Contraintes techniques
-  - Contraintes réglementaires
-  - Matrice de priorisation
+  - scope
+  - features
+  - business_rules
+  - tech_constraints
+  - regulatory_constraints
+  - prioritization_matrix
+light_sections:
+  - scope
+  - features
+  - prioritization_matrix
+output_file: work/01-discovery/specs-fonctionnelles.md
 ---
 
-# Spécifications fonctionnelles — {NOM_DU_PROJET}
+# Specs fonctionnelles — {project_name}
 
-> Date : {DATE}
-> Version : 1.0
-> Statut : ✅ Validé / ⏳ En attente de validation
+date: {YYYY-MM-DD}
+version: 1.0
 
-## Périmètre
+## scope
 
-### In scope
+in:
+- {included_item}
 
-{LISTE_DETAILLEE_DE_CE_QUI_EST_INCLUS}
+out:
+- {excluded_item} — {reason}
 
-### Out of scope
+## features
 
-{LISTE_DETAILLEE_DE_CE_QUI_EST_EXCLU — avec justification}
+Reference personas from ateliers-ux.md and KPIs from cadrage.md where relevant.
 
-## Fonctionnalités
+### {feature_name}
 
-> Chaque fonctionnalité référence le(s) persona(s) concerné(s) depuis ateliers-ux.md.
+- priority: must / should / could / wont
+- complexity: S / M / L / XL
+- personas: {persona_names from ateliers-ux}
+- user_stories: US-{nnn}
+- dependencies: {dependencies or none}
 
-### {NOM_FONCTIONNALITE_1}
+description: {description}
 
-| Attribut | Détail |
-|----------|--------|
-| Priorité | 🔴 Must / 🟠 Should / 🟡 Could / ⚪ Won't |
-| Complexité | S / M / L / XL |
-| Persona(s) concerné(s) | {NOM_PERSONA_1}, {NOM_PERSONA_2} |
-| User stories liées | US-{XXX}, US-{XXX} |
-| Dépendances | {DEPENDANCES} |
-
-**Description :**
-{DESCRIPTION_DETAILLEE}
-
-**Règles métier :**
-- {REGLE_1}
-- {REGLE_2}
-
-**Critères d'acceptation :**
-- [ ] {CRITERE_1}
-- [ ] {CRITERE_2}
-- [ ] {CRITERE_LIE_AU_KPI_DU_CADRAGE_SI_PERTINENT}
+acceptance_criteria:
+- [ ] {criterion}
+- [ ] {criterion_linked_to_kpi_if_relevant}
 
 ---
 
-## Règles métier transversales
+## business_rules
 
-| Règle | Fonctionnalités impactées | Comportement attendu |
-|-------|--------------------------|---------------------|
-| {REGLE} | {FEATURES} | {COMPORTEMENT_DETAILLE} |
+| rule | affected_features | expected_behavior |
+|------|------------------|------------------|
+| {rule} | {features} | {behavior} |
 
-## Contraintes techniques
+## tech_constraints
 
-| Contrainte | Détail | Impact |
+| constraint | detail | impact |
 |-----------|--------|--------|
-| {CONTRAINTE} | {DETAIL} | {IMPACT_SUR_LE_PROJET} |
+| {constraint} | {detail} | {impact} |
 
-## Contraintes réglementaires
+## regulatory_constraints
 
-| Réglementation | Exigence | Fonctionnalités impactées |
-|----------------|----------|--------------------------|
-| RGPD | {EXIGENCE_CONCRETE} | {FONCTIONNALITES} |
-| Accessibilité (RGAA/WCAG) | {EXIGENCE_CONCRETE} | {FONCTIONNALITES} |
-| {AUTRE} | {EXIGENCE} | {FONCTIONNALITES} |
+| regulation | requirement | affected_features |
+|-----------|------------|------------------|
+| {regulation} | {requirement} | {features} |
 
-## Matrice de priorisation
+## prioritization_matrix
 
-| Fonctionnalité | Priorité | Complexité | Persona(s) | Sprint estimé |
-|----------------|----------|------------|------------|---------------|
-| {FEATURE_1} | 🔴 Must | M | {PERSONA} | Sprint 1 |
-| {FEATURE_2} | 🟠 Should | L | {PERSONA} | Sprint 2 |
+| feature | priority | complexity | personas | estimated_sprint |
+|---------|----------|-----------|----------|-----------------|
+| {feature} | must / should / could | S / M / L | {persona} | sprint_{n} |

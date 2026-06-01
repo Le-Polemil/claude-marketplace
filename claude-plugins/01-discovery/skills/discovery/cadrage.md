@@ -1,72 +1,62 @@
 ---
 name: cadrage
-description: Template du livrable de cadrage projet
+description: Project scoping deliverable — objectives, KPIs, stakeholders, budget, planning, risks
 required_sections:
-  - Objectif du projet
-  - KPIs de succès
-  - Parties prenantes
-  - Budget
-  - Planning macro
-  - Contraintes
-  - Risques identifiés
+  - objective
+  - kpis
+  - stakeholders
+  - budget
+  - planning
+  - constraints
+  - risks
+light_sections:
+  - objective
+  - kpis
+  - stakeholders
+  - planning
+  - risks
+output_file: work/01-discovery/cadrage.md
 ---
 
-# Cadrage projet — {NOM_DU_PROJET}
+# Cadrage — {project_name}
 
-> Date : {DATE}
-> Statut : ✅ Validé / ⏳ En attente de validation
+date: {YYYY-MM-DD}
 
-## Objectif du projet
+## objective
 
-{OBJECTIF_PRINCIPAL — 2-3 phrases décrivant le but concret du projet}
+{2-3 sentences: concrete project goal}
 
-## KPIs de succès
+## kpis
 
-| KPI | Objectif chiffré | Méthode de mesure |
-|-----|-----------------|-------------------|
-| {KPI_1} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
-| {KPI_2} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
-| {KPI_3} | {OBJECTIF_CHIFFRE} | {OUTIL + METHODE} |
+| metric | target | measurement_method |
+|--------|--------|--------------------|
+| {kpi} | {quantified_target} | {tool + method} |
 
-## Parties prenantes
+## stakeholders
 
-| Rôle | Nom | Responsabilité |
-|------|-----|----------------|
-| Décideur | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
-| Validateur | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
-| Référent technique | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
-| Référent contenu | {NOM_COMPLET} | {RESPONSABILITE_CONCRETE} |
+| name | role | responsibility |
+|------|------|---------------|
+| {name} | decision_maker / validator / tech_lead / content_lead | {concrete_responsibility} |
 
-## Budget
+## budget
 
-- **Enveloppe totale** : {MONTANT}
-- **Répartition** :
-  - Conception / UX : {MONTANT_OU_POURCENTAGE}
-  - Design : {MONTANT_OU_POURCENTAGE}
-  - Développement : {MONTANT_OU_POURCENTAGE}
-  - Hébergement / infra : {MONTANT_OU_POURCENTAGE}
-  - Marge / imprévus : {MONTANT_OU_POURCENTAGE}
+- total: {amount}
+- breakdown (if known): conception {%}, design {%}, dev {%}, infra {%}
 
-## Planning macro
+## planning
 
-| Jalon | Date prévue | Dépendances |
-|-------|-------------|-------------|
-| Kick-off | {JJ/MM/AAAA} | — |
-| Fin Discovery | {JJ/MM/AAAA} | — |
-| Maquettes validées | {JJ/MM/AAAA} | Discovery |
-| Début développement | {JJ/MM/AAAA} | Maquettes |
-| Recette client | {JJ/MM/AAAA} | Développement |
-| Mise en production | {JJ/MM/AAAA} | Recette |
+| milestone | date | depends_on |
+|-----------|------|-----------|
+| {milestone} | {YYYY-MM-DD} | {dependency or none} |
 
-## Contraintes
+## constraints
 
-| Contrainte | Type | Impact sur le projet |
-|-----------|------|---------------------|
-| {CONTRAINTE_1} | Deadline / Techno / Légal / Budget | {IMPACT} |
+| constraint | type | project_impact |
+|-----------|------|---------------|
+| {constraint} | deadline / tech / legal / budget | {impact} |
 
-## Risques identifiés
+## risks
 
-| Risque | Impact | Probabilité | Stratégie de mitigation |
-|--------|--------|-------------|------------------------|
-| {RISQUE_1} | 🔴 Fort / 🟠 Moyen / 🟡 Faible | 🔴 / 🟠 / 🟡 | {ACTION_CONCRETE} |
-| {RISQUE_2} | 🔴 / 🟠 / 🟡 | 🔴 / 🟠 / 🟡 | {ACTION_CONCRETE} |
+| risk | impact | probability | mitigation |
+|------|--------|------------|-----------|
+| {risk} | high / medium / low | high / medium / low | {action} |

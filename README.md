@@ -8,20 +8,21 @@ Chaque plugin correspond à une phase du cycle de vie d'un projet web. Les plugi
 
 Toutes les données du projet sont centralisées dans un dossier `work/` avec un fichier `projet.md` qui sert de fil rouge entre les phases.
 
-## Les 10 plugins
+## Les 11 plugins
 
 | Plugin | Commande | Description |
 |--------|----------|-------------|
 | project-init | `/project-init` | Initialise work/ et projet.md |
 | 01-discovery | `/discovery` | Cadrage, audit, benchmark, UX, specs, RGPD |
-| 02-architecture | `/architecture` | Stack, hébergement, schéma, a11y, SEO |
-| 03-setup | `/setup` | Repo, CI/CD, conventions, secrets, analytics, IA |
-| 04-design | `/design` | Wireframes, maquettes, proto, review, handoff |
-| 05-ticketing | `/ticketing` | DoD, épiques, tickets, estimation, priorisation |
-| 06-development | `/development` | Env local, Storybook, front, back, analytics, review |
-| 07-qa | `/qa` | Tests, E2E, cross-browser, a11y, sécu, perf |
-| 08-deployment | `/deployment` | Staging, mise en prod, monitoring, redirections |
-| 09-post-launch | `/post-launch` | Doc technique, maintenance, rétro, analytics, itérations |
+| 02-business | `/business` | Business model, pricing, GTM, fundraising |
+| 03-architecture | `/architecture` | Stack, hébergement, schéma, a11y, SEO |
+| 04-setup | `/setup` | Repo, CI/CD, conventions, secrets, analytics, IA |
+| 05-design | `/design` | Wireframes, maquettes, proto, review, handoff |
+| 06-ticketing | `/ticketing` | DoD, épiques, tickets, estimation, priorisation |
+| 07-development | `/development` | Env local, Storybook, front, back, analytics, review |
+| 08-qa | `/qa` | Tests, E2E, cross-browser, a11y, sécu, perf |
+| 09-deployment | `/deployment` | Staging, mise en prod, monitoring, redirections |
+| 10-post-launch | `/post-launch` | Doc technique, maintenance, rétro, analytics, itérations |
 
 ## Installation
 
@@ -43,14 +44,15 @@ claude plugin install 01-discovery@web-project-toolkit
 ```bash
 /project-init       # Initialiser le projet
 /discovery          # Phase 01
-/architecture       # Phase 02
-/setup              # Phase 03
-/design             # Phase 04
-/ticketing          # Phase 05
-/development        # Phase 06
-/qa                 # Phase 07
-/deployment         # Phase 08
-/post-launch        # Phase 09
+/business           # Phase 02
+/architecture       # Phase 03
+/setup              # Phase 04
+/design             # Phase 05
+/ticketing          # Phase 06
+/development        # Phase 07
+/qa                 # Phase 08
+/deployment         # Phase 09
+/post-launch        # Phase 10
 ```
 
 ## Qualité des livrables
