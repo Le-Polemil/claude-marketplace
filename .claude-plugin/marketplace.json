@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "web-project-toolkit",
   "version": "1.0.0",
-  "description": "Toolkit complet pour piloter un projet web de A à Z — 9 phases de la discovery au post-lancement",
+  "description": "Toolkit complet pour piloter un projet web de A à Z — 10 phases de la discovery au post-lancement",
   "owner": {
     "name": "Le-Polemil",
     "email": ""
@@ -23,57 +23,64 @@
       "category": "project-management"
     },
     {
-      "name": "02-architecture",
-      "source": "./claude-plugins/02-architecture",
+      "name": "02-business",
+      "source": "./claude-plugins/02-business",
+      "description": "Phase Business : business model, pricing, go-to-market, fundraising",
+      "version": "1.0.0",
+      "category": "project-management"
+    },
+    {
+      "name": "03-architecture",
+      "source": "./claude-plugins/03-architecture",
       "description": "Phase Architecture : stack, hébergement, schéma, accessibilité, SEO",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "03-setup",
-      "source": "./claude-plugins/03-setup",
+      "name": "04-setup",
+      "source": "./claude-plugins/04-setup",
       "description": "Phase Setup : repo, CI/CD, conventions, secrets, analytics, documentation IA",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "04-design",
-      "source": "./claude-plugins/04-design",
+      "name": "05-design",
+      "source": "./claude-plugins/05-design",
       "description": "Phase Design : wireframes, maquettes hi-fi, prototypage, review client, handoff",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "05-ticketing",
-      "source": "./claude-plugins/05-ticketing",
+      "name": "06-ticketing",
+      "source": "./claude-plugins/06-ticketing",
       "description": "Phase Ticketing : DoD, épiques, tickets GitHub, estimation, priorisation",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "06-development",
-      "source": "./claude-plugins/06-development",
+      "name": "07-development",
+      "source": "./claude-plugins/07-development",
       "description": "Phase Dev : env local, Storybook, front, back, données, analytics, review",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "07-qa",
-      "source": "./claude-plugins/07-qa",
+      "name": "08-qa",
+      "source": "./claude-plugins/08-qa",
       "description": "Phase QA : tests unitaires, E2E, cross-browser, a11y, sécurité, performance",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "08-deployment",
-      "source": "./claude-plugins/08-deployment",
+      "name": "09-deployment",
+      "source": "./claude-plugins/09-deployment",
       "description": "Phase Déploiement : staging, mise en prod, monitoring, redirections SEO",
       "version": "1.0.0",
       "category": "project-management"
     },
     {
-      "name": "09-post-launch",
-      "source": "./claude-plugins/09-post-launch",
+      "name": "10-post-launch",
+      "source": "./claude-plugins/10-post-launch",
       "description": "Phase Post-lancement : documentation, maintenance, rétro, analytics J+30, itérations",
       "version": "1.0.0",
       "category": "project-management"
